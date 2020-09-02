@@ -1,0 +1,25 @@
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let video of videos" [class.video-selected]="video === selectedVideo" (click)="selectVideo(video)">
+      <td>
+        {{ video.title }}
+      </td>
+      <td>
+        {{ video.author }}
+      </td>
+      <td>
+        <span *ngFor="let detail of video.viewDetails"> {{ detail.region }} </span>
+        <br>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
